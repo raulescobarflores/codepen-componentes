@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive SaaS Data Table</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="table-card">
+    <div class="table-toolbar">
+      <div class="filter-pills" id="filterPills">
+        <button class="pill is-active" data-filter="all">All</button>
+        <button class="pill" data-filter="approved">Approved</button>
+        <button class="pill" data-filter="pending">Pending</button>
+        <button class="pill" data-filter="rejected">Rejected</button>
+      </div>
+
+      <div class="search-box">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search PO or vendor..." aria-label="Search orders" />
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Vendor</th>
+            <th>Cost Center</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr data-status="approved">
+            <td class="mono">#PO-1042</td>
+            <td class="vendor">AgroSupply Co.</td>
+            <td>Operations</td>
+            <td class="amount">$4,250.00</td>
+            <td><span class="badge is-approved">Approved</span></td>
+          </tr>
+          <tr data-status="pending">
+            <td class="mono">#PO-1043</td>
+            <td class="vendor">LogiTrans SA</td>
+            <td>Logistics</td>
+            <td class="amount">$1,890.00</td>
+            <td><span class="badge is-pending">Pending</span></td>
+          </tr>
+          <tr data-status="approved">
+            <td class="mono">#PO-1044</td>
+            <td class="vendor">ChemCore Ltd.</td>
+            <td>Operations</td>
+            <td class="amount">$6,120.00</td>
+            <td><span class="badge is-approved">Approved</span></td>
+          </tr>
+          <tr data-status="rejected">
+            <td class="mono">#PO-1045</td>
+            <td class="vendor">TechParts Pro</td>
+            <td>Maintenance</td>
+            <td class="amount">$980.00</td>
+            <td><span class="badge is-rejected">Rejected</span></td>
+          </tr>
+          <tr data-status="pending">
+            <td class="mono">#PO-1046</td>
+            <td class="vendor">GreenField Inc.</td>
+            <td>Operations</td>
+            <td class="amount">$3,400.00</td>
+            <td><span class="badge is-pending">Pending</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="empty-state" id="emptyState">No matching purchase orders found.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #e0ecff 0%, #f1f5f9 50%, #e2e8f0 100%);
+  color: #0f172a;
+}
+
+.sidebar {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.sidebar.is-collapsed {
+  width: 76px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 16px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.brand-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.collapse-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.collapse-btn:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.nav-item.is-active {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+.nav-icon {
+  flex-shrink: 0;
+}
+
+.nav-label {
+  flex: 1;
+  text-align: left;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.nav-group.is-open .chevron {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 42px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, margin 0.25s ease;
+}
+
+.nav-group.is-open .submenu {
+  max-height: 160px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.sub-item {
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.sub-item:hover,
+.sub-item.is-active {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+}
+
+/* Estado colapsado */
+.sidebar.is-collapsed .brand,
+.sidebar.is-collapsed .nav-label,
+.sidebar.is-collapsed .chevron {
+  display: none;
+}
+
+.sidebar.is-collapsed .submenu {
+  max-height: 0 !important;
+  margin: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.is-collapsed .sidebar-header {
+  justify-content: center;
+}
+
+.sidebar.is-collapsed .nav-item {
+  justify-content: center;
+  padding: 10px;
+}

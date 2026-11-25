@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive SaaS Bar Chart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <h2 class="card-title">Approved Orders by Cost Center / Month</h2>
+        <p class="card-subtitle">3 active cost centers • 13 approved orders total</p>
+      </div>
+      <span class="badge">November</span>
+    </div>
+
+    <div class="chart-area">
+      <div class="y-axis">
+        <span>12</span>
+        <span>9</span>
+        <span>6</span>
+        <span>3</span>
+        <span>0</span>
+      </div>
+
+      <div class="bars-grid" id="barsGrid">
+        <div class="bar-col" data-label="Operations" data-value="10">
+          <div class="bar-track">
+            <div class="bar-fill" style="--target-height: 83%;">
+              <span class="bar-value">10</span>
+            </div>
+          </div>
+          <span class="bar-label">Operations</span>
+        </div>
+
+        <div class="bar-col" data-label="Logistics" data-value="2">
+          <div class="bar-track">
+            <div class="bar-fill" style="--target-height: 17%;">
+              <span class="bar-value">2</span>
+            </div>
+          </div>
+          <span class="bar-label">Logistics</span>
+        </div>
+
+        <div class="bar-col" data-label="Maintenance" data-value="1">
+          <div class="bar-track">
+            <div class="bar-fill" style="--target-height: 8%;">
+              <span class="bar-value">1</span>
+            </div>
+          </div>
+          <span class="bar-label">Maintenance</span>
+        </div>
+      </div>
+
+      <div class="tooltip" id="tooltip" role="status" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Toast Notification Stack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="controls">
+    <button class="trigger-btn is-success" data-type="success">Order Approved</button>
+    <button class="trigger-btn is-warning" data-type="warning">Pending Review</button>
+    <button class="trigger-btn is-error" data-type="error">Order Rejected</button>
+  </div>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

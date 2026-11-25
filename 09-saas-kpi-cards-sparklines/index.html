@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS KPI Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-top">
+        <span class="kpi-label">Total Monthly Spend</span>
+        <span class="trend is-up">+12.4%</span>
+      </div>
+      <div class="kpi-value">$48,920</div>
+      <div class="kpi-sub">vs. $43,520 last month</div>
+      <svg class="sparkline" viewBox="0 0 200 50" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="gradGreen" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <path class="spark-area" d="M0,42 L35,34 L70,38 L105,22 L140,26 L175,12 L200,8 L200,50 L0,50 Z" fill="url(#gradGreen)" />
+        <path class="spark-line" d="M0,42 L35,34 L70,38 L105,22 L140,26 L175,12 L200,8" stroke="#10b981" />
+      </svg>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-top">
+        <span class="kpi-label">Avg. Approval Time</span>
+        <span class="trend is-blue">-18.2%</span>
+      </div>
+      <div class="kpi-value">4.2 hrs</div>
+      <div class="kpi-sub">vs. 5.1 hrs last month</div>
+      <svg class="sparkline" viewBox="0 0 200 50" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="gradBlue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <path class="spark-area" d="M0,12 L35,18 L70,15 L105,28 L140,24 L175,36 L200,40 L200,50 L0,50 Z" fill="url(#gradBlue)" />
+        <path class="spark-line" d="M0,12 L35,18 L70,15 L105,28 L140,24 L175,36 L200,40" stroke="#3b82f6" />
+      </svg>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Approval Stages Stepper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stage-wrapper" id="stageWrapper">
+    <button
+      class="stage-btn"
+      id="stageBtn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="stagePopover"
+    >
+      <span class="pulse-dot"></span>
+      <span class="btn-label">Stage 2/4 • Area Manager</span>
+      <svg class="chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6"></path>
+      </svg>
+    </button>
+
+    <div class="stage-popover" id="stagePopover" role="region" aria-label="Approval timeline">
+      <div class="popover-header">
+        <span class="po-id">#PO-1043</span>
+        <span class="po-status">In Progress</span>
+      </div>
+
+      <ul class="timeline">
+        <li class="step is-done">
+          <span class="step-icon">✓</span>
+          <div class="step-content">
+            <span class="step-title">Order Requested</span>
+            <span class="step-meta">Carlos M. • Nov 17, 09:15</span>
+          </div>
+        </li>
+
+        <li class="step is-current">
+          <span class="step-icon">2</span>
+          <div class="step-content">
+            <span class="step-title">Area Manager</span>
+            <span class="step-meta">Pending review • Laura G.</span>
+          </div>
+        </li>
+
+        <li class="step is-pending">
+          <span class="step-icon">3</span>
+          <div class="step-content">
+            <span class="step-title">Finance Approval</span>
+            <span class="step-meta">Waiting for previous step</span>
+          </div>
+        </li>
+
+        <li class="step is-pending">
+          <span class="step-icon">4</span>
+          <div class="step-content">
+            <span class="step-title">Dispatched</span>
+            <span class="step-meta">Final authorization</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

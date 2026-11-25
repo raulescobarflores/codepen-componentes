@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Donut Chart Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <h2 class="card-title">Total Purchase Orders / Month</h2>
+        <p class="card-subtitle">15 orders managed this period</p>
+      </div>
+      <span class="period-badge">November</span>
+    </div>
+
+    <div class="chart-layout">
+      <div class="donut-wrapper">
+        <svg class="donut-svg" viewBox="0 0 180 180">
+          <circle class="donut-track" cx="90" cy="90" r="68" />
+          <circle class="donut-segment" data-status="approved" cx="90" cy="90" r="68" stroke="#10b981" />
+          <circle class="donut-segment" data-status="pending" cx="90" cy="90" r="68" stroke="#f59e0b" />
+          <circle class="donut-segment" data-status="rejected" cx="90" cy="90" r="68" stroke="#ef4444" />
+          <circle class="donut-segment" data-status="unreceived" cx="90" cy="90" r="68" stroke="#8b5cf6" />
+        </svg>
+        <div class="donut-center">
+          <span class="center-label" id="centerLabel">TOTAL</span>
+          <span class="center-value" id="centerValue">30</span>
+        </div>
+      </div>
+
+      <div class="status-list">
+        <div class="status-item" data-status="approved" data-count="15" data-label="Approved">
+          <span class="status-left">
+            <span class="dot" style="background: #10b981;"></span>
+            <span>Approved</span>
+          </span>
+          <span class="status-count">15</span>
+        </div>
+
+        <div class="status-item" data-status="pending" data-count="1" data-label="Pending">
+          <span class="status-left">
+            <span class="dot" style="background: #f59e0b;"></span>
+            <span>Pending</span>
+          </span>
+          <span class="status-count">1</span>
+        </div>
+
+        <div class="status-item" data-status="rejected" data-count="1" data-label="Rejected">
+          <span class="status-left">
+            <span class="dot" style="background: #ef4444;"></span>
+            <span>Rejected</span>
+          </span>
+          <span class="status-count">1</span>
+        </div>
+
+        <div class="status-item" data-status="unreceived" data-count="13" data-label="Unreceived">
+          <span class="status-left">
+            <span class="dot" style="background: #8b5cf6;"></span>
+            <span>Unreceived</span>
+          </span>
+          <span class="status-count">13</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

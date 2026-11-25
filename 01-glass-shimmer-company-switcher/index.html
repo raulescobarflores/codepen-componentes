@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass Shimmer Company Switcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="showcase">
+    <div class="company-switcher" id="companySwitcher">
+      <button
+        class="glass-shimmer-btn"
+        id="switcherBtn"
+        type="button"
+        role="combobox"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-label="Select company"
+        style="--shimmer-color: 37, 99, 235;"
+      >
+        <span class="btn-content">
+          <span class="company-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+              <path d="M9 22v-4h6v4"></path>
+              <path d="M8 6h.01"></path>
+              <path d="M16 6h.01"></path>
+              <path d="M12 6h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M16 10h.01"></path>
+              <path d="M16 14h.01"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M8 14h.01"></path>
+            </svg>
+          </span>
+          <span class="company-name" id="selectedCompany">Company 1</span>
+        </span>
+
+        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m7 15 5 5 5-5"></path>
+          <path d="m7 9 5-5 5 5"></path>
+        </svg>
+      </button>
+
+      <ul class="company-menu" id="companyMenu" role="listbox" aria-label="Available companies">
+        <li class="company-option is-selected" role="option" aria-selected="true" data-value="Company 1">
+          <span>Company 1</span>
+          <span class="check">✓</span>
+        </li>
+        <li class="company-option" role="option" aria-selected="false" data-value="Company 2">
+          <span>Company 2</span>
+          <span class="check">✓</span>
+        </li>
+        <li class="company-option" role="option" aria-selected="false" data-value="Company 3">
+          <span>Company 3</span>
+          <span class="check">✓</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
