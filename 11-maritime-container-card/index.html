@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maritime Container Reception Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cards-grid" id="cardsGrid">
+    <article class="container-card" data-state="arrived">
+      <header class="card-header">
+        <div class="header-left">
+          <div class="icon-box" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+              <path d="m3.3 7 8.7 5 8.7-5"></path>
+              <path d="M12 22V12"></path>
+            </svg>
+          </div>
+          <div>
+            <button type="button" class="container-id copy-trigger" data-copy="MSCU4829104" title="Copy container ID">
+              <span>MSCU4829104</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+              </svg>
+            </button>
+            <span class="shipment-sub">Shipment <strong>EMB-2026-041</strong></span>
+          </div>
+        </div>
+        <span class="status-pill is-arrived" data-pill>
+          <span class="pill-dot"></span>
+          <span class="pill-text">Arrived at Port</span>
+        </span>
+      </header>
+
+      <div class="card-body">
+        <div class="stage-bar" data-stage-bar aria-label="Reception workflow progress">
+          <span class="stage-seg is-active"></span>
+          <span class="stage-seg"></span>
+          <span class="stage-seg"></span>
+        </div>
+
+        <dl class="meta-list">
+          <div><dt>Equipment / Seal:</dt><dd class="mono-slate">40' HC · #SL-99241</dd></div>
+          <div><dt>Purchase Order:</dt><dd class="mono-blue">#OC-2026-884</dd></div>
+          <div><dt>Supplier:</dt><dd class="strong">Shanghai Steel Co., Ltd</dd></div>
+          <div><dt>Port Arrival:</dt><dd class="eta">28/11/2026 · STI</dd></div>
+        </dl>
+
+        <div class="cargo-metrics">
+          <div class="metric-box">
+            <span class="metric-label">Items / SKUs</span>
+            <strong class="metric-value">12 items</strong>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">Total Units</span>
+            <strong class="metric-value">4,850 u.</strong>
+          </div>
+        </div>
+
+        <div class="status-banner is-arrived" data-banner>
+          <strong class="banner-title">Arrived — Ready for Reception</strong>
+          <span class="banner-sub">Available for warehouse intake</span>
+        </div>
+      </div>
+
+      <footer class="card-footer" data-footer>
+        <button type="button" class="btn btn-outline" data-action="inspect">Start Inspection</button>
+        <button type="button" class="btn btn-primary" data-action="receive">Receive</button>
+      </footer>
+    </article>
+
+    <article class="container-card" data-state="discrepancy">
+      <header class="card-header">
+        <div class="header-left">
+          <div class="icon-box" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+              <path d="m3.3 7 8.7 5 8.7-5"></path>
+              <path d="M12 22V12"></path>
+            </svg>
+          </div>
+          <div>
+            <button type="button" class="container-id copy-trigger" data-copy="HLXU9031278" title="Copy container ID">
+              <span>HLXU9031278</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+              </svg>
+            </button>
+            <span class="shipment-sub">Shipment <strong>EMB-2026-039</strong></span>
+          </div>
+        </div>
+        <span class="status-pill is-discrepancy" data-pill>
+          <span class="pill-dot"></span>
+          <span class="pill-text">Discrepancy</span>
+        </span>
+      </header>
+
+      <div class="card-body">
+        <div class="stage-bar" data-stage-bar aria-label="Reception workflow progress">
+          <span class="stage-seg is-done"></span>
+          <span class="stage-seg is-done"></span>
+          <span class="stage-seg is-error"></span>
+        </div>
+
+        <dl class="meta-list">
+          <div><dt>Equipment / Seal:</dt><dd class="mono-slate">20' GP · #SL-41802</dd></div>
+          <div><dt>Purchase Order:</dt><dd class="mono-blue">#OC-2026-879</dd></div>
+          <div><dt>Supplier:</dt><dd class="strong">Ningbo Hardware Corp</dd></div>
+          <div><dt>Port Arrival:</dt><dd class="eta">22/11/2026 · TPS</dd></div>
+        </dl>
+
+        <div class="cargo-metrics">
+          <div class="metric-box">
+            <span class="metric-label">Items / SKUs</span>
+            <strong class="metric-value">8 items</strong>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">Total Units</span>
+            <strong class="metric-value">3,120 u.</strong>
+          </div>
+        </div>
+
+        <div class="status-banner is-discrepancy" data-banner>
+          <strong class="banner-title">Received with Discrepancy</strong>
+          <span class="banner-sub">Partial warehouse entry (-45 units missing)</span>
+        </div>
+      </div>
+
+      <footer class="card-footer single" data-footer>
+        <button type="button" class="btn btn-rose" data-action="reset">Reset to Arrived</button>
+      </footer>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

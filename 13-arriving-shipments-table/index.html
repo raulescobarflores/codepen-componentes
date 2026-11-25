@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arriving Shipments Dashboard Table</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="board-card" aria-label="Arriving Shipments Dashboard">
+    <header class="board-header">
+      <div class="board-title-group">
+        <span class="board-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path>
+            <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path>
+            <path d="M12 10v4"></path>
+          </svg>
+        </span>
+        <div>
+          <h1>Arriving Shipments</h1>
+          <p class="board-subtitle">Inbound maritime schedule &amp; port reception monitor</p>
+        </div>
+      </div>
+
+      <div class="summary-chip" id="summaryChip">
+        <span id="summaryCount">6 shipments</span>
+        <span class="sep">·</span>
+        <strong id="summaryTotal">$254,180.00</strong>
+      </div>
+    </header>
+
+    <div class="board-toolbar">
+      <div class="filter-pills" id="filterPills" role="tablist" aria-label="Filter by shipment status">
+        <button type="button" class="pill is-active" data-status="all">All <span class="count" data-count="all">0</span></button>
+        <button type="button" class="pill" data-status="transit">In Transit <span class="count" data-count="transit">0</span></button>
+        <button type="button" class="pill" data-status="delayed">Delayed <span class="count" data-count="delayed">0</span></button>
+        <button type="button" class="pill" data-status="arrived">Arrived <span class="count" data-count="arrived">0</span></button>
+        <button type="button" class="pill" data-status="received">Received <span class="count" data-count="received">0</span></button>
+      </div>
+
+      <div class="search-box">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search shipment, vessel, PO, BL..." aria-label="Search shipments" />
+        <button type="button" class="clear-btn" id="clearSearchBtn" aria-label="Clear search" hidden>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-sort="code" class="is-sorted">Shipment <span class="sort-ind">↓</span></th>
+            <th data-sort="route">Route &amp; Line <span class="sort-ind">↕</span></th>
+            <th data-sort="po">Linked POs <span class="sort-ind">↕</span></th>
+            <th data-sort="usd" class="right">Total USD <span class="sort-ind">↕</span></th>
+            <th data-sort="eta">ETD / ETA <span class="sort-ind">↕</span></th>
+            <th>Voyage Status</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState">
+        <p>No matching shipments found.</p>
+        <button type="button" class="reset-filters-btn" id="resetFiltersBtn">Reset filters</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

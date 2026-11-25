@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyage Ship Progress Bar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <article class="voyage-card" id="voyageCard">
+    <header class="card-header">
+      <div class="vessel-info">
+        <span class="vessel-badge" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path>
+            <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path>
+            <path d="M12 10v4"></path>
+            <path d="M12 2v3"></path>
+          </svg>
+        </span>
+        <div>
+          <span class="shipment-code">EMB-2026-041</span>
+          <span class="vessel-name">M/V MSC ANNA · <span id="transitLabel">27d</span> Transit</span>
+        </div>
+      </div>
+
+      <span class="status-pill is-transit" id="statusPill">
+        <span class="pill-dot"></span>
+        <span id="statusText">In Transit</span>
+      </span>
+    </header>
+
+    <div class="voyage-widget">
+      <div class="ports-row">
+        <div class="port origin">
+          <span class="port-tag">POL · CNSHA</span>
+          <span class="port-name">Shanghai, CN</span>
+          <span class="port-date">ETD Nov 01</span>
+        </div>
+
+        <div class="waypoint-chip" id="waypointChip">
+          <span class="waypoint-label">Transshipment</span>
+          <span class="waypoint-name">Balboa, PA</span>
+        </div>
+
+        <div class="port destination">
+          <span class="port-tag">POD · CLSAI</span>
+          <span class="port-name">San Antonio, CL</span>
+          <span class="port-date" id="etaDate">ETA Nov 28</span>
+        </div>
+      </div>
+
+      <div class="track-wrap" id="trackWrap">
+        <div class="track-bg"></div>
+        <div class="track-fill" id="trackFill"></div>
+        <div class="port-dot is-start" title="Origin: Shanghai, CN"></div>
+        <div class="port-dot is-hub" id="hubDot" title="Waypoint: Balboa, PA"></div>
+        <div class="port-dot is-end" id="endDot" title="Destination: San Antonio, CL"></div>
+
+        <div class="ship-marker" id="shipMarker" role="status" aria-live="polite">
+          <span class="ship-tooltip" id="shipTooltip">67%</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path>
+            <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path>
+            <path d="M12 10v4"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="meta-row">
+        <span class="meta-state" id="metaState">In Navigation</span>
+        <span class="meta-days" id="metaDays">9 days remaining</span>
+      </div>
+    </div>
+
+    <div class="controls-bar">
+      <div class="slider-group">
+        <label for="daySlider">
+          <span>Voyage Progress Simulation</span>
+          <strong id="dayLabel">Day 18 / 27</strong>
+        </label>
+        <input type="range" id="daySlider" min="0" max="27" value="18" aria-label="Voyage day" />
+      </div>
+
+      <div class="action-row">
+        <div class="mode-pills" id="modePills" role="group" aria-label="Schedule status">
+          <button type="button" class="mode-btn is-active" data-mode="transit">On Time</button>
+          <button type="button" class="mode-btn" data-mode="delayed">Delayed (+4d)</button>
+        </div>
+        <button type="button" class="play-btn" id="playBtn">
+          <svg id="playIcon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+          </svg>
+          <span id="playLabel">Animate</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>

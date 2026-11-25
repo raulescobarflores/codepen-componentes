@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shipment Tracking Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <article class="shipment-card" id="shipmentCard">
+    <header class="card-header">
+      <div class="header-left">
+        <div class="ship-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+            <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path>
+            <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path>
+            <path d="M12 10v4"></path>
+          </svg>
+        </div>
+        <div>
+          <button type="button" class="shipment-code copy-trigger" data-copy="EMB-2026-041" title="Copy shipment code">
+            <span>EMB-2026-041</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+            </svg>
+          </button>
+          <span class="shipping-line">MSC Mediterranean · M/V MSC ANNA</span>
+        </div>
+      </div>
+
+      <span class="status-pill is-pending" id="statusPill">
+        <span class="pill-dot"></span>
+        <span id="statusText">Pending Confirmation</span>
+      </span>
+    </header>
+
+    <div class="card-body">
+      <div class="route-amount-row">
+        <div class="route-box">
+          <div class="route-ports">
+            <span class="port-code">CNSHA</span>
+            <span class="pol">Shanghai</span>
+          </div>
+          <span class="route-connector" aria-hidden="true">
+            <span class="route-line"></span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </span>
+          <div class="route-ports">
+            <span class="port-code pod-code">CLSAI</span>
+            <span class="pod">San Antonio</span>
+          </div>
+        </div>
+
+        <div class="amount-box">
+          <span class="amount-label">Pre-Invoice USD</span>
+          <strong class="amount-value">$48,920.00</strong>
+        </div>
+      </div>
+
+      <div class="details-list">
+        <div class="detail-row">
+          <span class="detail-label">Containers:</span>
+          <div class="chips-group">
+            <button type="button" class="chip mono" data-container="ok">MSCU4829104</button>
+            <button type="button" class="chip mono is-damaged" data-container="damaged" aria-expanded="false">
+              <span class="alert-dot" aria-hidden="true"></span>
+              MSCU7712031
+            </button>
+          </div>
+        </div>
+
+        <div class="damage-note" id="damageNote" aria-hidden="true">
+          <div class="damage-note-inner">
+            <strong>Alert on MSCU7712031:</strong> Minor moisture damage reported on outer crates (-45 u. under claim #CLM-104).
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Linked POs:</span>
+          <div class="chips-group">
+            <span class="po-badge">#OC-884</span>
+            <span class="po-badge">#OC-885</span>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Sailing / Arrival:</span>
+          <span class="dates-text">
+            ETD <strong>01/11/2026</strong> → ETA <strong class="eta">28/11/2026</strong>
+          </span>
+        </div>
+      </div>
+
+      <div class="bl-summary">
+        <div>
+          <span class="bl-label">Pre-Invoice / BL</span>
+          <button type="button" class="bl-value mono copy-trigger" data-copy="BL-SHG-99210" title="Copy BL number">
+            <span>BL-SHG-99210</span>
+          </button>
+        </div>
+        <div class="right">
+          <span class="bl-label">Declared Cargo</span>
+          <strong class="bl-value">4,850 u. · 12 SKUs</strong>
+        </div>
+      </div>
+
+      <div class="allocations-drawer" id="allocationsDrawer" aria-hidden="true">
+        <div class="drawer-inner">
+          <div class="drawer-title">Cargo Breakdown Preview</div>
+          <div class="drawer-row">
+            <span class="mono">SKU-1024 · Steel Valve 2"</span>
+            <strong>2,400 u.</strong>
+          </div>
+          <div class="drawer-row">
+            <span class="mono">SKU-2088 · Carbon Flange</span>
+            <strong>1,650 u.</strong>
+          </div>
+          <div class="drawer-row">
+            <span class="mono">SKU-3310 · Industrial Bolt</span>
+            <strong>800 u.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions-row" id="actionsRow">
+        <button type="button" class="btn btn-outline" id="detailsBtn" aria-expanded="false">View Details</button>
+        <button type="button" class="btn btn-primary" id="confirmBtn">Generate Shipment</button>
+        <button type="button" class="btn btn-reset" id="resetBtn" title="Reset demo" aria-label="Reset demo" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,8 @@
 # CodePen UI Components — SaaS Collection
 
-Colección de **9 componentes de interfaz SaaS** interactivos construidos con **HTML, CSS y Vanilla JavaScript** (sin dependencias ni frameworks externos), listos para usar en proyectos web o explorar directamente en CodePen.
+Colección de **13 componentes de interfaz SaaS & COMEX** interactivos construidos con **HTML, CSS y Vanilla JavaScript** (sin dependencias ni frameworks externos), listos para usar en proyectos web o explorar directamente en CodePen.
 
+[![CodePen Collection](https://img.shields.io/badge/CodePen_Collection-wkmEOm-0ebeff?style=flat-square&logo=codepen&logoColor=white)](https://codepen.io/collection/wkmEOm)
 [![CodePen](https://img.shields.io/badge/CodePen-raulescobarflores-000000?style=flat-square&logo=codepen&logoColor=white)](https://codepen.io/raulescobarflores)
 [![Portfolio](https://img.shields.io/badge/Portafolio-raulescobarfl.dev-0f172a?style=flat-square&logo=googlechrome&logoColor=white)](https://raulescobarfl.dev/)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
@@ -11,6 +12,8 @@ Colección de **9 componentes de interfaz SaaS** interactivos construidos con **
 ---
 
 ## Catálogo de componentes
+
+> **Colección completa en CodePen:** [Ver todos los componentes juntos](https://codepen.io/collection/wkmEOm)
 
 Cada carpeta contiene el código fuente completo del componente (`index.html`, `style.css` y `script.js`) y su enlace directo al Pen público en CodePen:
 
@@ -25,6 +28,10 @@ Cada carpeta contiene el código fuente completo del componente (`index.html`, `
 | 07 | **Interactive SaaS Data Table** | [Ver carpeta](./07-interactive-saas-data-table/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a1ec79-b702-7749-bf8e-309ac22f52c1) |
 | 08 | **Approval Stages Button & Timeline Popover** | [Ver carpeta](./08-approval-stages-stepper/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a1ec7b-53bc-7be7-88cf-7b949ba63fbb) |
 | 09 | **SaaS KPI Cards with Animated SVG Sparklines** | [Ver carpeta](./09-saas-kpi-cards-sparklines/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a1ec7c-7668-7c25-ae3c-e305ebb2c4c2) |
+| 10 | **Voyage Ship Progress Bar (COMEX)** | [Ver carpeta](./10-voyage-ship-progress-bar/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a2106c-75fc-742c-9527-248e21726905) |
+| 11 | **Maritime Container Reception Card (COMEX)** | [Ver carpeta](./11-maritime-container-card/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a2106f-f08b-7c54-977f-21040a0f6a49) |
+| 12 | **Shipment Tracking Card (COMEX)** | [Ver carpeta](./12-shipment-tracking-card/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a21076-0887-7cf7-9111-35212afb3486) |
+| 13 | **Arriving Shipments Dashboard Table (COMEX)** | [Ver carpeta](./13-arriving-shipments-table/) | [Abrir en CodePen](https://codepen.io/editor/raulescobarflores/pen/01a21079-262f-7d5a-be02-f810b6605d8f) |
 
 ---
 
@@ -38,7 +45,7 @@ Cada componente es independiente y sigue la misma organización:
 │   ├── style.css
 │   └── script.js
 ├── ...
-└── 09-saas-kpi-cards-sparklines/
+└── 13-arriving-shipments-table/
     ├── index.html
     ├── style.css
     └── script.js
